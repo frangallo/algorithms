@@ -41,3 +41,8 @@ def common_substrings(str1, str2)
   end
   result
 end
+
+def sum_rec(array)
+  return 0 if array.empty?
+  array.pop + sum_rec(array)
+end
