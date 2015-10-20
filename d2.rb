@@ -27,3 +27,8 @@ end
 #   }
 #   return true;
 # }
+
+def valid_ip?(string)
+  nums = string.split(".")
+  nums.all?{|el| el.to_i.between?(0,255)}
+end
