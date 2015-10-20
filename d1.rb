@@ -25,3 +25,19 @@ def caesar_chipher(string, shift)
   end
   result
 end
+
+def common_substrings(str1, str2)
+  result = ""
+  (str1.length-1).times do |el|
+    end_el = el
+    str = ""
+    while str2.include?(str1[el..end_el])
+      str += str1[end_el]
+      end_el +=1
+    end
+    if str.length > result.length
+      result = str
+    end
+  end
+  result
+end
