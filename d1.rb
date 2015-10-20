@@ -13,3 +13,15 @@ def root(num)
   end
   sum
 end
+
+def caesar_chipher(string, shift)
+  alphabet = ("a".."z").to_a
+  result = ""
+
+  string.each_char do |letter|
+    idx = alphabet.index(letter) + shift
+    idx %= 26
+    result += alphabet[idx]
+  end
+  result
+end
