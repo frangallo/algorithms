@@ -47,3 +47,29 @@ p alphabet
 
   result
 end
+
+def uniqe_subs(str)
+  substrings = {}
+  str.length.times do |start|
+    start.upto(str.length) do |end|
+      substrings[str[start..end]] = true unless substrings[str[start..end]]
+    end
+  end
+  substrings.keys
+end
+
+[1,2,3,-2,4,-5]
+
+def largest_cont_sum(array)
+  sum = 0
+  current = 0
+  array.each do |el|
+    current += el
+    if current > sum
+      sum = current
+    elsif current < 0
+      current = 0
+    end
+  end
+  sum
+end
