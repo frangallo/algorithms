@@ -27,3 +27,14 @@ def factorial_rec(num, cache)
     cache[num] = val
   end
 end
+
+def max_unique_psub(str)
+  psub = str[str.length - 1]
+
+  (str.length - 2).downto(0) do |i|
+    next if str[i] < psub[0]
+    psub = str[i] + psub
+  end
+
+  psub
+end
