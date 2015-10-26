@@ -12,3 +12,8 @@ def files_list(hash)
   end
   files
 end
+
+
+def find_missing_number(array1, array2)
+  num = array1.inject(:+) - array2.inject(:+)
+end
