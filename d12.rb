@@ -40,3 +40,14 @@ def balancedWeight(node)
 
   return left + right + 1
 end
+
+def is_bst?(node, max=nil, min=nil)
+  return true if node.nil?
+
+  if (max && node > max) || (min && node < min)
+    return false
+  end
+  
+  is_bst?(node.left, max=node, min= nil) if node.left
+  is_bst?(node.right, max=nil, min= node) if node.right
+end
