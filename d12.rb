@@ -47,7 +47,7 @@ def is_bst?(node, max=nil, min=nil)
   if (max && node > max) || (min && node < min)
     return false
   end
-  
+
   is_bst?(node.left, max=node, min= nil) if node.left
   is_bst?(node.right, max=nil, min= node) if node.right
 end
