@@ -141,6 +141,13 @@ class Heap
     current = 0
     while current < array.length-1
       child_idx = children(current).min_by({|el| @hold[el]})
+      if @hold[current] > @hold[child_idx]
+        swap!(current, child_idx)
+        current = child_idx
+      else
+        break
+      end
+    end
   end
 
   def swap!(idx1,idx2)
@@ -155,6 +162,9 @@ class Heap
 
   def pop_min
     temp = self.min
+    return nil if @hold.empty?
+    return @store.pop if @store.length == 1
+    @store[0] = @store.pop
     heapify_down!
     temp
   end
