@@ -1,2 +1,5 @@
-def kth_element(list)
+def kth_element(node,)
+  if node.nil?
+    return 0
+
 end

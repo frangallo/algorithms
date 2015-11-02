@@ -47,6 +47,40 @@ class LinkedList
   def pop
     @last = @last.prev
   end
+end
+
+class Queue
+  attr_accessor :first, :last, :hold
+
+  def initialize
+    @first = -1
+    @last = -1
+    @hold = []
+  end
+
+  def enqueue(value)
+    if self.empty?
+      @first, @last = 0,0
+    else
+      @last =+ 1
+    end
+
+    @hold[@last] = value
+  end
+
+  def dequeue(value)
+    val = @hold[@first]
+    @first += 1
+
+    if @first == @last
+      @first, @last = -1, -1
+    end
+    val
+  end
+
+  def empty?
+    @first == -1 & @last == -1
+  end
 
 
 end
